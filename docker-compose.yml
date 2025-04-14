@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  cog-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_ID=stabilityai/stable-diffusion-2-1
+    restart: unless-stopped
+    volumes:
+      - ./app:/app
